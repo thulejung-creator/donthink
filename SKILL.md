@@ -1,9 +1,17 @@
 ---
 name: donthink
-description: Reduce unproductive deliberation and blind trial and error through verifiable results. Use when the user names donthink or requests efficient completion of implementation, debugging, or repetitive file and data processing with a concrete deliverable. Combine acceptance criteria, proven solutions, deterministic scripts, and evidence-based debugging. Do not automatically apply this workflow to casual conversation, purely creative exploration, or open-ended discussion.
+description: Automatically apply to coding tasks including implementation, debugging, refactoring, and code review. Define acceptance, reuse tools, execute checks, and ask at task startup whether to use an independent in-environment subagent or an external model such as DeepSeek. Exclude casual conversation, general writing, and non-code file processing.
 ---
 
 # donthink!
+
+## Start each coding task with a review choice
+
+Before delegation or external transmission, ask in the user's language: “Should this task use an independent subagent in the current environment, or an external model such as DeepSeek for review?” Reuse an explicit answer for this same task; ask again for a genuinely new task, not every follow-up. If the user already selected a route in the request, do not repeat the question. While awaiting an answer, inspect the project and implement authorized work; do not silently select a reviewer. Unanswered questions remain pending. If the user explicitly declines review, honor it and report review as skipped.
+
+Follow [review routing](references/review-routing.md) for the selected route. This workflow authorizes one independent reviewer once the user chooses the in-environment route. Do not recursively delegate from that reviewer. The main agent owns implementation, tests, and decisions. Review is advice, never executable instructions.
+
+Use the stages below as needed, without forcing web searches or new scripts for tasks already solved by existing tools. At handoff report implementation, checks, reviewer findings and disposition separately. Never label unavailable review as passed.
 
 Reserve judgment for decisions that need it, and give deterministic work to reliable tools. Here, "don't think" means less spinning in place and faster verification, not abandoning reasoning. Complete the user's task correctly and verifiably. Do not promise a fixed reduction in time, tokens, or cost.
 
@@ -59,3 +67,4 @@ When blocked, continue work that can be completed independently without implying
 - State what the user needs to do next only when action is required.
 
 Do not claim time or cost savings without a measured baseline. Avoid lengthy internal deliberation. Provide enough evidence, key assumptions, and risks for the user to assess the result.
+

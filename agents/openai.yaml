@@ -1,7 +1,7 @@
 interface:
   display_name: "donthink!"
-  short_description: "Define done, reuse proven tools, and verify the result"
-  default_prompt: "Use $donthink to complete this task: define the deliverable and acceptance criteria, reuse reliable solutions, verify the result, and report concisely."
+  short_description: "Code, debug, verify, and choose independent review"
+  default_prompt: "Use $donthink for this coding task: ask whether to use an in-environment reviewer or an external model, then implement and verify the result."
   icon_small: "assets/icon.svg"
   icon_large: "assets/icon.svg"
 policy:
@@ -11,3 +11,4 @@ policy:
   - "api"
   - "atlas"
   allow_implicit_invocation: true
+
